@@ -1,0 +1,77 @@
+/* Footer: newsletter, columns, brand, bottom bar — stitch rules, mono meta,
+   squared controls. */
+
+.site-footer { background: var(--dark); color: #fff; }
+.newsletter {
+  display: flex; align-items: center; justify-content: space-between; gap: 30px;
+  padding: 64px 0; position: relative;
+}
+.newsletter::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: var(--stitch); opacity: 0.3;
+}
+.newsletter h2 { font-size: clamp(30px, 3.6vw, 48px); font-weight: 500; white-space: nowrap; }
+.newsletter form { display: flex; align-items: center; background: var(--canvas); border-radius: 2px; padding: 8px; width: min(520px, 100%); }
+.newsletter input {
+  flex: 1; border: 0; outline: 0; padding: 24px 18px;
+  font-family: var(--mono); font-size: 12.5px; background: transparent; color: var(--ink);
+}
+.newsletter button {
+  width: 48px; height: 48px; border-radius: 2px; background: var(--ink); color: #fff;
+  display: flex; align-items: center; justify-content: center; flex: 0 0 auto;
+  transition: background var(--dur-fast) var(--ease-standard), transform var(--dur-fast) var(--ease-standard);
+}
+.newsletter button:hover { background: var(--accent); transform: translateX(2px); }
+.footer__cols { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr; gap: 40px; padding: 70px 0 60px; }
+.footer__cols > * { min-width: 0; }
+.footer__brand .site-header__logo { display: block; text-align: left; margin-bottom: 28px; }
+.footer__contact { display: flex; flex-wrap: wrap; gap: 20px 40px; margin-bottom: 34px; }
+.footer__contact > div { display: flex; gap: 12px; align-items: center; }
+.footer__contact .round {
+  width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);
+  display: flex; align-items: center; justify-content: center; flex: 0 0 auto;
+  transition: background var(--dur-fast) var(--ease-standard);
+}
+.footer__contact > div:hover .round { background: rgba(255, 255, 255, 0.2); }
+.footer__contact small { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #bdb8aa; }
+.footer__contact span { font-size: 13.5px; white-space: nowrap; }
+.footer__social h4, .footer__cols h4 {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0.18em;
+  text-transform: uppercase; margin-bottom: 20px; color: #cfc9ba;
+}
+.footer__social > div { display: flex; gap: 10px; }
+.footer__social a {
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--dur-fast) var(--ease-standard), transform var(--dur-fast) var(--ease-standard);
+}
+.footer__social a:hover { background: rgba(255, 255, 255, 0.25); transform: translateY(-2px); }
+.footer__cols nav a {
+  display: block; font-size: 12.5px; letter-spacing: 0.05em; text-transform: uppercase; color: #d6d2c6;
+  padding: 6px 0;
+  transition: color var(--dur-fast) var(--ease-standard), padding-left var(--dur-fast) var(--ease-standard);
+}
+.footer__cols nav a:hover { color: #fff; padding-left: 6px; }
+.footer__bottom {
+  position: relative; padding: 22px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  font-size: 12.5px; color: #cfc9ba;
+}
+.footer__bottom::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px;
+  background: var(--stitch); opacity: 0.3;
+}
+.footer__bottom p { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; }
+.footer__locale { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; font-family: var(--mono); font-size: 10.5px; }
+.footer__pay { display: flex; gap: 6px; }
+.footer__pay span {
+  background: #fff; border-radius: 2px; font-size: 9px; font-weight: 800; font-style: italic;
+  padding: 3px 7px; display: inline-flex; align-items: center; gap: 3px;
+}
+.footer__pay span[data-brand='visa'] { color: #1a1f71; }
+.footer__pay span[data-brand='mc'] { color: #eb001b; }
+.footer__pay span[data-brand='mc']::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: #f79e1b; margin-right: -6px; mix-blend-mode: multiply; }
+.footer__pay span[data-brand='amex'] { color: #2e77bc; }
+.footer__pay span[data-brand='paypal'] { color: #003087; }
+.footer__pay span[data-brand='diners'] { color: #0079be; }
+.footer__pay span[data-brand='discover'] { color: #f48120; }
